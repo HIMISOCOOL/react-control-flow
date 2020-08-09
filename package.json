@@ -3,10 +3,10 @@
     "version": "0.1.0",
     "repository": {
         "type": "git",
-        "url": "REPLACE_ME"
+        "url": "https://github.com/HIMISOCOOL/react-control-flow"
     },
     "bugs": {
-        "url": "REPLACE_ME"
+        "url": "https://github.com/HIMISOCOOL/react-control-flow/issues"
     },
     "author": {
         "email": "matusmarx@gmail.com",
