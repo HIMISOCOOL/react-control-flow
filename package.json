@@ -1,39 +1,59 @@
 {
-  "name": "react-control-flow",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "@types/jest": "^24.0.0",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
-    "@types/react-dom": "^16.9.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1",
-    "typescript": "~3.7.2"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
+    "name": "react-control-flow",
+    "version": "0.1.0",
+    "repository": {
+        "type": "git",
+        "url": "REPLACE_ME"
+    },
+    "bugs": {
+        "url": "REPLACE_ME"
+    },
+    "author": {
+        "email": "matusmarx@gmail.com",
+        "name": "Matthew Meehan"
+    },
+    "license": "MIT",
+    "description": "A series of control flow components to make writing jsx in react more declarative",
+    "main": "dist/index.js",
+    "source": "src/lib/index.ts",
+    "types": "types/index.d.ts",
+    "files": [
+        "/dist",
+        "/types",
+        "README.md"
     ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+    "sideEffects": false,
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "npm-run-all clean build:typescript build:production",
+        "build:typescript": "tsc -p tsconfig.build.json --outDir types",
+        "build:production": "cross-env NODE_ENV=production babel src/lib --extensions \".ts,.tsx\" --out-dir dist --copy-files --ignore __tests__,spec.ts,test.ts,__snapshots__",
+        "clean": "rimraf dist && rimraf types",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.10.5",
+        "@testing-library/jest-dom": "^4.2.4",
+        "@testing-library/react": "^9.3.2",
+        "@testing-library/user-event": "^7.1.2",
+        "@types/jest": "^24.0.0",
+        "@types/node": "^12.0.0",
+        "@types/react": "^16.9.0",
+        "@types/react-dom": "^16.9.0",
+        "cross-env": "^7.0.2",
+        "npm-run-all": "^4.1.5",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1",
+        "react-scripts": "3.4.1",
+        "rimraf": "^3.0.2",
+        "typescript": "~3.7.2"
+    },
+    "peerDependencies": {
+        "react": ">=16.8",
+        "react-dom": ">=16.8"
+    }
 }

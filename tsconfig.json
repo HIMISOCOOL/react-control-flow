@@ -15,9 +15,9 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
+    "jsx": "react",
     "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react"
+    "noEmit": true
   },
   "include": [
     "src"
